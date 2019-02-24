@@ -21,7 +21,7 @@ In file "filter.js" you will find the creation "currencyFilter" filter,
 In file "services.js" you will find the creation services: 
 * `currencyAPI` - get currency value from Privat24 API;
 * `workWithCurrency` - work with money convertation
-    > > `convertToUAH` - convert money to UAH;
-    > > `convertFromUAH` - convert money from UAH;
-    > > `convertFromBTCtoUAH` - convert money from BTC to UAH;
-    > > `convertWithComission` - count convertation with comission;
+   -`convertToUAH` - convert money to UAH;
+   - `convertFromUAH` - convert money from UAH;
+   - `convertFromBTCtoUAH` - convert money from BTC to UAH;
+   -`convertWithComission` - count convertation with comission;
