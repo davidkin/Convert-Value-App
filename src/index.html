@@ -10,6 +10,80 @@
 	</head>
 	<body>
 		
+		<form class="convert-app" ng-app="myApp" ng-controller='currencyController as cc'>
+			
+			<nav class="nav nav-pills nav-justified">
+				<p class="nav-item nav-link active" href="javascript:void(0)">Currency Convert</p>
+			</nav>
+
+			<div class="choose-value">
+				<div class="form-group">
+					<label>Give</label>
+					<select class="form-control" 
+							ng-model="cc.currencyGiveName" 
+							ng-click="cc.convertMoney()"
+							ng-options='item.ccy as item.ccy for item in cc.currency | currencyFilter: cc.currencyReceiveName'>
+					</select>
+				</div>
+
+				<button type="button" class="btn btn-outline-primary" ng-click='cc.swapCurrency()'>
+					<i class="fas fa-exchange-alt"></i>
+				</button>
+
+				<div class="form-group">
+					<label>Receive</label>
+					<select class="form-control" 
+							ng-model="cc.currencyReceiveName" 
+							ng-click="cc.convertMoney()"
+							ng-options='item.ccy as item.ccy for item in cc.currency | currencyFilter: cc.currencyGiveName '>
+					</select>
+				</div>
+			</div>
+
+			<div class="choose-sum">
+
+				<div class="form-group">
+					<label>How much trade</label>
+					<input type="number" 
+						class="form-control" 
+						min='1'
+						placeholder="0.00" 
+						ng-model="cc.tradeValue" 
+						ng-change='cc.convertMoney()'
+					/>
+				</div>
+
+				<p>or</p>
+
+				<div class="form-group">
+					<label>How much receive</label>
+					<input type="number" 
+						class="form-control" 
+						placeholder="0.00"
+						ng-model="cc.receiveValue" 
+						ng-change='cc.convertMoney()'
+						readonly
+					/>
+				</div>
+
+			</div>
+
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<label class="input-group-text" for="inputGroupSelect01">Comission</label>
+				</div>
+				<select class="custom-select" ng-click='cc.addCommissions($event)'>
+					<option selected disabled>Choose...</option>
+					<option value="1">1%</option> 
+					<option value="2">2%</option>
+					<option value="3">3%</option>
+					<option value="4">4%</option>
+					<option value="5">5%</option>
+				</select>
+			</div>
+
+		</form>
+		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.js"></script>
 		<script src='./index.js'></script>
 	</body>
