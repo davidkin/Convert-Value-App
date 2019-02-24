@@ -1,0 +1,10 @@
+{
+  "env": {
+    "commonjs": true
+  },
+  "globals": {
+    "myApp": "readable",
+    "angular": "readable"
+  },
+  "extends": "./config/eslintconfig.js"
+}
