@@ -27,5 +27,10 @@
         }
       });
     };
+
+    this.swapCurrency = () => {
+      [this.currencyGiveName, this.currencyReceiveName] = [this.currencyReceiveName, this.currencyGiveName];
+      [this.tradeValue, this.receiveValue] = [this.receiveValue, this.tradeValue];
+    };
   }]);
 }());
