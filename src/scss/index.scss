@@ -1,0 +1,63 @@
+@import './reset.scss';
+
+.convert-app {
+    max-width: 700px;
+    margin: 80px auto;
+    border: 1px solid#6c757d;
+    background-color: #F8F8FF;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+    font-family: Arial;
+
+    .choose-value, .choose-sum {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 2rem;
+    }
+
+    .choose-sum {
+        align-items: center;
+
+        p {
+            margin-top: 20px;
+        }
+    }
+
+    .nav {
+        position: relative;
+        top: -20px;
+
+        &-item {
+            text-transform: uppercase;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0; 
+            font-weight: bold;
+            font-size: 12px;
+        }
+    }
+
+    label {
+        margin-bottom: 10px;
+    }
+    
+    .btn {
+        width: 10%;
+    }
+}
+
+.form-group {
+    width: 40%;
+    margin-bottom: 0;
+}
+
+.input-group {
+    justify-content: center;
+}
+
+.input-group>.custom-select {
+    width: 20%;
+    flex: 0 auto;
+}
+
