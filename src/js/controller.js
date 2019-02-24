@@ -32,5 +32,11 @@
       [this.currencyGiveName, this.currencyReceiveName] = [this.currencyReceiveName, this.currencyGiveName];
       [this.tradeValue, this.receiveValue] = [this.receiveValue, this.tradeValue];
     };
+
+    this.withCommissions = $event => {
+      this.convertMoney();
+      const comission = workWithCurrency.convertWithComission(this.receiveValue, $event.target.value);
+      this.receiveValue = Number((this.receiveValue - comission).toFixed(2));
+    };
   }]);
 }());
