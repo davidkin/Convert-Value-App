@@ -17,7 +17,7 @@ In file "controller.js" you will find the creation "currencyController" controll
 ## Filter
 In file "filter.js" you will find the creation "currencyFilter" filter,
 
-## Filter
+## Services
 In file "services.js" you will find the creation services: 
 * `currencyAPI` - get currency value from Privat24 API;
 * `workWithCurrency` - work with money convertation
