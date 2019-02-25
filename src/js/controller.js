@@ -36,7 +36,7 @@
 
       this.withCommissions = $event => {
         this.convertMoney();
-        const comission = workWithCurrencyService.convertWithComission(this.receiveValue, $event.target.value);
+        const comission = workWithCurrencyService.convertWithFee(this.receiveValue, $event.target.value);
         this.receiveValue = Number((this.receiveValue - comission).toFixed(2));
       };
     }]);

@@ -18,6 +18,6 @@
     this.convertFromUAH = (sumUAH, buyVal) => Number((sumUAH / buyVal).toFixed(2));
     this.convertFromBTCtoUAH = (sumUAH, buyVal, valueUAH) => Number((sumUAH * buyVal * valueUAH).toFixed(2));
 
-    this.convertWithComission = (sum, comission) => Number(((sum * comission) / 100).toFixed(2));
+    this.convertWithFee = (sum, fee) => Number(((sum * fee) / 100).toFixed(2));
   }]);
 }());
