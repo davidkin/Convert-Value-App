@@ -1,7 +1,7 @@
 /* global app, angular */
 
 (function() {
-  app.service('currencyAPIService', ['$http', function($http) {
+  app.service('workWithCurrencyService', ['$http', function($http) {
     this.data = [];
     this.getResponse = () => {
       $http({
@@ -11,13 +11,15 @@
 
       return this.data;
     };
-  }]);
 
-  app.service('workWithCurrencyService', [function() {
     this.convertToUAH = (currentlyVal, buyVal) => Number((currentlyVal * buyVal).toFixed(2));
     this.convertFromUAH = (sumUAH, buyVal) => Number((sumUAH / buyVal).toFixed(2));
     this.convertFromBTCtoUAH = (sumUAH, buyVal, valueUAH) => Number((sumUAH * buyVal * valueUAH).toFixed(2));
 
     this.convertWithFee = (sum, fee) => Number(((sum * fee) / 100).toFixed(2));
   }]);
+
+  app.constant('constants', {
+    'fee': [0, 1, 2, 3, 4, 5]
+  });
 }());
