@@ -33,15 +33,12 @@
         };
 
         $scope.$watchGroup(
-          ['cc.currencyReceiveName', 'cc.currencyReceiveName', 'cc.tradeValue'],
+          ['cc.currencyReceiveName', 'cc.currencyReceiveName', 'cc.tradeValue', 'cc.comission'],
           () => {
             this.convertMoney();
+            this.withCommissions();
           }
         );
-
-        $scope.$watch('cc.comission', () => {
-          this.withCommissions();
-        });
 
         this.swapCurrency = () => {
           [this.currencyGiveName, this.currencyReceiveName] = [this.currencyReceiveName, this.currencyGiveName];
