@@ -18,8 +18,4 @@
 
     this.convertWithFee = (sum, fee) => Number(((sum * fee) / 100).toFixed(2));
   }]);
-
-  app.constant('constants', {
-    'fee': [0, 1, 2, 3, 4, 5]
-  });
 }());
