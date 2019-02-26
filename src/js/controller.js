@@ -1,10 +1,11 @@
 /* global app, angular, workWithCurrencyServiceService, constants */
+/* eslint-disable max-len*/
 (function() {
   app.controller('currencyController',
     ['$scope', 'workWithCurrencyService', 'constants',
       function($scope, workWithCurrencyService, constants) {
         this.currency = workWithCurrencyService.getResponse();
-        this.nameOfCurrency = [];
+        this.nameOfCurrency = workWithCurrencyService.getList();
 
         this.tradeValue = null;
         this.receiveValue = null;
@@ -17,19 +18,13 @@
         this.convertMoney = () => {
           let result = 0;
 
-          this.currency.forEach(({ ccy: currencyName, buy }) => {
-            if (this.currencyGiveName === 'BTC') {
-              result = workWithCurrencyService.convertFromBTCtoUAH(this.tradeValue, buy, this.currency[0].buy);
-            } else if (currencyName === this.currencyGiveName) {
-              result = workWithCurrencyService.convertToUAH(this.tradeValue, buy);
-            }
-          });
+          if (this.currencyGiveName === 'BTC') {
+            result = workWithCurrencyService.convertFromBTCtoUAH(this.tradeValue, this.nameOfCurrency[this.currencyGiveName].buy, this.currency[0].buy);
+          } else {
+            result = workWithCurrencyService.convertToUAH(this.tradeValue, this.nameOfCurrency[this.currencyGiveName].buy);
+          }
 
-          this.currency.forEach(({ ccy: currencyName, sale }) => {
-            if (currencyName === this.currencyReceiveName) {
-              this.receiveValue = workWithCurrencyService.convertFromUAH(result, sale);
-            }
-          });
+          this.receiveValue = workWithCurrencyService.convertFromUAH(result, this.nameOfCurrency[this.currencyReceiveName].sale);
         };
 
         $scope.$watchGroup(
