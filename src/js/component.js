@@ -2,7 +2,7 @@
 
 (function() {
   app.component('converterConverter', {
-    templateUrl: 'converter-converter.html',
+    templateUrl: 'curency-converter.html',
     replace: true
   });
 }());
