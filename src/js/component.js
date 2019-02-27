@@ -1,7 +1,7 @@
 /* global app  */
 
 (function() {
-  app.component('myApp', {
+  app.component('converterApp', {
     templateUrl: 'app.html',
     replace: true
   });
