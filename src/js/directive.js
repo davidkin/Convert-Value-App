@@ -2,6 +2,7 @@
 
 (function() {
   app.component('myApp', {
-    templateUrl: 'app.html'
+    templateUrl: 'app.html',
+    replace: true
   });
 }());
