@@ -5,12 +5,13 @@
     ['$scope', 'workWithCurrencyService', 'constants',
       function($scope, workWithCurrencyService, constants) {
         this.currency = workWithCurrencyService.getResponse();
-        this.nameOfCurrency = workWithCurrencyService.getList();
+        this.currencyObj = workWithCurrencyService.getList();
+
+        [this.comission] = constants.fee;
+        this.constantsFee = constants.fee;
 
         this.tradeValue = null;
         this.receiveValue = null;
-        this.constantsFee = constants.fee;
-        [this.comission] = constants.fee;
 
         this.currencyGiveName = 'USD';
         this.currencyReceiveName = 'RUR';
@@ -19,12 +20,12 @@
           let result = 0;
 
           if (this.currencyGiveName === 'BTC') {
-            result = workWithCurrencyService.convertFromBTCtoUAH(this.tradeValue, this.nameOfCurrency[this.currencyGiveName].buy, this.currency[0].buy);
+            result = workWithCurrencyService.convertFromBTCtoUAH(this.tradeValue, this.currencyObj[this.currencyGiveName].buy, this.currency[0].buy);
           } else {
-            result = workWithCurrencyService.convertToUAH(this.tradeValue, this.nameOfCurrency[this.currencyGiveName].buy);
+            result = workWithCurrencyService.convertToUAH(this.tradeValue, this.currencyObj[this.currencyGiveName].buy);
           }
 
-          this.receiveValue = workWithCurrencyService.convertFromUAH(result, this.nameOfCurrency[this.currencyReceiveName].sale);
+          this.receiveValue = workWithCurrencyService.convertFromUAH(result, this.currencyObj[this.currencyReceiveName].sale);
         };
 
         $scope.$watchGroup(
