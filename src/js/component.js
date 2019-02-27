@@ -1,8 +1,8 @@
 /* global app  */
 
 (function() {
-  app.component('converterApp', {
-    templateUrl: 'app.html',
+  app.component('converterConverter', {
+    templateUrl: 'converter-converter.html',
     replace: true
   });
 }());

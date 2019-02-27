@@ -8,7 +8,6 @@
 
   app.run(function($rootScope) {
     $rootScope.inetActive = navigator.onLine;
-    console.log('---', navigator.onLine);
   });
 
   window.app = app;

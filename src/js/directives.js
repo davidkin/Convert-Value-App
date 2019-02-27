@@ -1,6 +1,6 @@
 /* global app */
 
-app.directive('inetCheck', function() {
+app.directive('checkConnection', function() {
   return {
     restrict: 'A',
     templateUrl: 'internet.html'
