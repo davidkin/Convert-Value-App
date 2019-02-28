@@ -13,7 +13,7 @@
 			<div class="container">
 
 				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-					<a class="navbar-brand" href="#">CC App</a>
+					<a class="navbar-brand" ui-sref="app" ui-sref-active="active">CC App</a>
 				
 					<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 
@@ -24,7 +24,7 @@
 							</li>
 
 							<li class="nav-item">
-								<a class="nav-link" ui-sref="converter" ui-sref-active="active">Converter</a>
+								<a class="nav-link" ui-sref="converter" ui-sref-active="active" ui-router-default>Converter</a>
 							</li>
 
 							<li class="nav-item">
@@ -51,8 +51,6 @@
 				</ui-view>
 			</div>
 		</section>
-
-		<!-- <converter-converter ng-hide='!inetActive'></converter-converter> -->
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.js"></script>
