@@ -1,8 +1,13 @@
 @import './reset.scss';
 
+body {
+    font-size: 16px;
+    font-family: Arial;
+}
+
 .convert-app {
     max-width: 700px;
-    margin: 80px auto;
+    margin: 0 auto;
     border: 1px solid#6c757d;
     background-color: #F8F8FF;
     border-radius: 5px;
@@ -61,7 +66,14 @@
     flex: 0 auto;
 }
 
-.active {
-    color: red;
-    font-weight: bold;
+
+.wrapper {
+    padding: 80px 0;
+    border: 1px solid #6c757d;
+    border-top: 0; 
+}
+
+.h2 {
+    text-align: center;
+    margin: 15px 0 ;
 }

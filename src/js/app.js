@@ -15,7 +15,7 @@
       }).state({
         name: 'home',
         url: '/home',
-        template: '<h3>Its the UI-Router hello world app!</h3>'
+        template: '<h2 class="h2">Welcome to my App</h2>'
       });
     }]);
 
