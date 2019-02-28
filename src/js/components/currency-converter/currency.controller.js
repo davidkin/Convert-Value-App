@@ -16,6 +16,9 @@
         this.currencyGiveName = 'USD';
         this.currencyReceiveName = 'RUR';
 
+        this.currencyObj[this.currencyGiveName] = {};
+        this.currencyObj[this.currencyReceiveName] = {};
+
         this.convertMoney = () => {
           let result = 0;
 
