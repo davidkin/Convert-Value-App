@@ -15,7 +15,7 @@
       }).state({
         name: 'home',
         url: '/home',
-        template: '<h2 class="h2">Welcome to my App</h2>'
+        template: '<h2 class="h2">Home Page</h2>'
       });
     }]);
 
