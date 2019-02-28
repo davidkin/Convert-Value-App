@@ -9,11 +9,21 @@
     <title>Currency converter</title>
 	</head>
 	<body ng-app="myApp">
+		<header>
+			<div class="container">
+				<ul>
+					<li><a ui-sref="home" ui-sref-active="active">Home</a></li>
+					<li><a ui-sref="converter" ui-sref-active="active">Converter</a></li>
+				</ul>
+			</div>
+		</header>
 
-		<check-connection ng-show='!inetActive'></check-connection>
-		<converter-converter ng-hide='!inetActive'></converter-converter>
+		<ui-view></ui-view>
+
+		<!-- <converter-converter ng-hide='!inetActive'></converter-converter> -->
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.js"></script>
 		<script src='./index.js'></script>
 	</body>
 	</html>
